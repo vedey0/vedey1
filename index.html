@@ -1,6 +1,39 @@
 <!doctype html>
 <html lang="id">
 <head>
+	<script>
+(function() {
+  const popUrl = "https://www.effectivegatecpm.com/ztq64ga7?key=73eff3d564ed5ace465b967a86312028"; // 🔗 Ganti dengan URL DirectLink kamu
+  const cookieName = "popunder_triggered";
+  const intervalMinutes = 1; // ⏱️ 1 menit
+
+  function setCookie(name, value, minutes) {
+    const expires = new Date(Date.now() + minutes * 60 * 1000).toUTCString();
+    document.cookie = ${name}=${value}; expires=${expires}; path=/;
+  }
+
+  function getCookie(name) {
+    return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
+  }
+
+  function openPopunder() {
+    const newWin = window.open(popUrl, '_blank');
+    if (newWin) {
+      newWin.blur();
+      window.focus(); // supaya popunder muncul di belakang
+      setCookie(cookieName, "1", intervalMinutes);
+    }
+  }
+
+  // Jalankan hanya jika belum pernah muncul dalam 1 menit
+  if (!getCookie(cookieName)) {
+    document.addEventListener('click', function handler() {
+      openPopunder();
+      document.removeEventListener('click', handler);
+    });
+  }
+})();
+</script>
 <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Vldey</title>
